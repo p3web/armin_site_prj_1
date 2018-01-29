@@ -29,7 +29,7 @@ export class SignupComponent implements OnInit {
   // Temp
   data;
 
-  constructor (fb : FormBuilder , private http : HttpService){    
+  constructor (fb : FormBuilder , private _http : HttpService){    
     // custom Validator
     let cv : validatorCustom = new validatorCustom();
     // create formGruop and validator
@@ -49,13 +49,7 @@ export class SignupComponent implements OnInit {
   onSubmit(Form) {
       
     Form['act'] = 'set_user';      
-    // this.http.getRequest(this.SignUpUrl , Form)
-    // .subscribe(
-    //   data => this.data = JSON.stringify(data),
-    //   error => alert('error'),
-    //   () => console.log(this.data)      
-    // )
-    this.http.sendRequest(this.SignUpUrl , Form , 'GET' , console.log);
+    this._http.sendRequest(this.SignUpUrl , Form , 'GET' , console.log);
   }
 
   ngOnInit() {

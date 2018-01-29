@@ -13,14 +13,16 @@ export class HttpService{
     
     constructor(private _http : Http){}
 
-    getRequest(url : string , param : Object):Observable<object>{
+   private getRequest(url : string , param : Object):Observable<object>{
         let Header = new Headers();
         let authtoken = localStorage.getItem('authtoken');
         
         // Headers
         Header.append('Content-Type' , 'application/json')
         Header.append('Access-Control-Allow-Origin', '*');
-
+        Header.append('Accept', 'application/json');
+        Header.append('Access-Control-Allow-Methods', 'POST, GET, OPTIONS, DELETE, PUT');        
+        Header.append('Access-Control-Allow-Headers', "X-Requested-With, Content-Type, Origin, Authorization, Accept, Client-Security-Token, Accept-Encoding");
         // authtoken Header
         if(authtoken){
             Header.append("Authorization", 'Token ' + authtoken);
@@ -43,7 +45,7 @@ export class HttpService{
         }).map((res :Response) => <object>res.json());
     }
 
-    postRequest (url : string , param : Object): Observable<object>{
+  private  postRequest (url : string , param : Object): Observable<object>{
         let JsonParam : string = JSON.stringify(param);
         let Header = new Headers();
         let authtoken = localStorage.getItem('authtoken');
@@ -51,6 +53,9 @@ export class HttpService{
         // Headers
         Header.append('Content-Type' , 'application/json')
         Header.append('Access-Control-Allow-Origin', '*');
+        Header.append('Accept', 'application/json');
+        Header.append('Access-Control-Allow-Methods', 'POST, GET, OPTIONS, DELETE, PUT');        
+        Header.append('Access-Control-Allow-Headers', "X-Requested-With, Content-Type, Origin, Authorization, Accept, Client-Security-Token, Accept-Encoding");
         // authtoken Header
         if(authtoken){
             Header.append("Authorization", 'Token ' + authtoken);
@@ -80,7 +85,7 @@ export class HttpService{
         }
     }
 
-    GetData(callBackFunc:any){
+  private  GetData(callBackFunc:any){
         
         if(this.DATA['act'] == 'msg'){
             alert(this.DATA['text']);

@@ -12,6 +12,7 @@ import {ErrorStateMatcher} from '@angular/material/core';
 
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 import {FormControl, FormGroupDirective, NgForm, Validators , FormsModule , ReactiveFormsModule} from '@angular/forms';
 import { HttpModule } from '@angular/http';
@@ -20,11 +21,15 @@ import { HttpModule } from '@angular/http';
 import { RouterModule,Routes } from '@angular/router';
 import {LocationStrategy, HashLocationStrategy, APP_BASE_HREF} from '@angular/common';
 import { ROUTER_PROVIDERS } from '@angular/router/src/router_module';
+import { LoginComponent } from './login/login.component';
+import { SetPasswordComponent } from './set-password/set-password.component';
 
 const routes: Routes = [
-    { path: '', redirectTo: 'signup', pathMatch: 'full' },
-    { path: 'signup', component: SignupComponent },
-    { path: 'lostpass', component: LostPasswordComponent }
+    { path: '', redirectTo: 'setPass', pathMatch: 'full' },
+    { path: 'signUp', component: SignupComponent },
+    { path: 'lostPass', component: LostPasswordComponent },
+    { path: 'login', component: LoginComponent },
+    { path: 'setPass', component: SetPasswordComponent }
 ];
 
 
@@ -33,7 +38,9 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     SignupComponent,
-    LostPasswordComponent
+    LostPasswordComponent,
+    LoginComponent,
+    SetPasswordComponent
   ],
   imports: [
     BrowserModule,
@@ -41,6 +48,7 @@ const routes: Routes = [
    MatInputModule,
    MatButtonModule,
    MatCardModule,
+   MatCheckboxModule,
    FormsModule,
    ReactiveFormsModule,
    HttpModule,   

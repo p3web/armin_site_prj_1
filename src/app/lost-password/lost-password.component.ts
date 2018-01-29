@@ -12,11 +12,25 @@ import { HttpService } from '../globalClasses/Http.service';
 @Component({
   selector: 'app-lost-password',
   templateUrl: './lost-password.component.html',
-  styleUrls: ['./lost-password.component.css']
+  providers:[HttpService]
 })
 export class LostPasswordComponent implements OnInit {
-  lostPassUrl : string = '';
-  constructor() { }
+  //  TODO : set correct url
+  lostPassUrl : string = 'http://w3pa.com/saku/phpCode/controller_robo/controller_user.php';
+  // Form model
+  lostPass : FormGroup;
+  email : AbstractControl;
+
+  constructor(fb:FormBuilder , private _http: HttpService) {
+    this.lostPass = fb.group({
+      'email' : ['' , [Validators.email,Validators.required]]
+    })
+   }
+
+   onSubmit(Form) {    
+    Form['act'] = 'lost_pass';      
+    this._http.sendRequest(this.lostPassUrl , Form , 'GET' , console.log);
+  }
 
   ngOnInit() {
   }

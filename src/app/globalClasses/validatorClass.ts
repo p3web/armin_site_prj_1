@@ -1,4 +1,7 @@
-import {FormControl} from '@angular/forms';
+import {FormControl , AbstractControl, FormGroup } from '@angular/forms';
+import { ViewChild } from '@angular/core/src/metadata/di';
+
+
 
 export class validatorCustom {    
     // letter validator
@@ -6,4 +9,7 @@ export class validatorCustom {
         if(!/^[a-zA-Z]*$/g.test(control.value))
              return {invalidLetter: true}        
     }
+
+   
+
 }

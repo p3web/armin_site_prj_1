@@ -1,6 +1,7 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
 /* global */
+
 img{
     max-width: 100%
 }
@@ -47,6 +48,13 @@ img{
 .margin-bottom{
     margin-bottom: 24px;
 }
+.margin-l-15{
+    margin-left: 15px;
+}
+.margin-r-15{
+    margin-right: 15px;
+}
+
 .flex-content-center{
     display: flex;
     align-items: center;
@@ -55,6 +63,13 @@ img{
 .full-area{
     height: 100vh;
     width:100%;
+}
+.pull-right{
+    float: right;
+}
+
+.pull-left{
+    float: left;
 }
 /* signUp */
 .signUp{
