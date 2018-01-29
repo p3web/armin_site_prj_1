@@ -1,0 +1,68 @@
+<div class="flex-content-center full-area flex-content-center">
+    <div class="col-12 col-sm-6 col-lg-4">
+        <!-- card -->
+        <mat-card>
+
+            <!-- header -->
+                <h4 class="text-center header card-center-top margin-bottom">Sign-up to Saku</h4>
+            
+            <!-- image -->
+            <div class="col-8 offset-2 col-lg-6 offset-lg-3">
+                    <img src="assets/img/logo.png" class="Responsive image margin-bottom" />
+            </div>
+            <!-- text -->
+            <div class="col-12  padding rtl text-right">
+                    <p class="f-15">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis </p>
+            </div>
+
+            <!-- form -->
+            <mat-card-content>
+                <form (ngSubmit)="onSubmit(signUp.value)" [formGroup] = "signUp">
+
+                    <div>
+                    <mat-form-field class="full-width text-right">
+                    <input matInput placeholder="First name" id="first_name" name="first_name"  
+                    [formControl] = "signUp.controls['first_name']">
+                    </mat-form-field>
+                </div>
+        
+                <div>
+                    <mat-form-field  class="full-width text-right" >
+                        <input matInput placeholder="Surname" id="last_name" name="last_name"  
+                        [formControl] = "signUp.controls['last_name']">
+                    </mat-form-field>
+                </div>
+        
+                <div>
+                    <mat-form-field class="full-width text-right">
+                        <input matInput placeholder="Email" [errorStateMatcher]="matcher" id="email" name="email" 
+                        [formControl] = "signUp.controls['email']">
+                        <!-- <mat-hint>Errors appear instantly!</mat-hint>
+                        <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                        Please enter a valid email address
+                        </mat-error>
+                        <mat-error *ngIf="emailFormControl.hasError('required')">
+                        Email is <strong>required</strong>
+                        </mat-error> -->
+                    </mat-form-field>
+                    </div>
+        
+                    <div >
+                        <mat-form-field  class="full-width text-right">
+                            <input matInput placeholder="Company name" id="company_name" name="company_name"
+                            [formControl] = "signUp.controls['company_name']">
+                        </mat-form-field>
+                    </div>
+                    
+                    <div>
+                        <button mat-raised-button [disabled]="!signUp.valid"  class="full-width" color="primary" type="submit">Sing Up</button>
+                    </div>
+                </form> 
+                <!-- footer -->
+                <footer class="bg-gray padding-vertical text-center card-center-bottom margin-top">
+                        Already have an account ? <a href="#">Login</a>
+                </footer>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
