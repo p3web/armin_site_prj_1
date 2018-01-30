@@ -13,7 +13,7 @@ export class HttpService{
     
     constructor(private _http : Http){}
 
-   private getRequest(url : string , param : Object):Observable<object>{
+    getRequest(url : string , param : Object):Observable<object>{
         let Header = new Headers();
         let authtoken = localStorage.getItem('authtoken');
         
@@ -45,7 +45,7 @@ export class HttpService{
         }).map((res :Response) => <object>res.json());
     }
 
-  private  postRequest (url : string , param : Object): Observable<object>{
+    postRequest (url : string , param : Object): Observable<object>{
         let JsonParam : string = JSON.stringify(param);
         let Header = new Headers();
         let authtoken = localStorage.getItem('authtoken');
@@ -69,30 +69,29 @@ export class HttpService{
         }).map((res : Response) => <object>res.json());     
     }
 
-    sendRequest(url:string , param:object , method:string , callBackFunc:any){
-        if(method.toLocaleLowerCase() == 'post'){
-            this.postRequest(url , param).subscribe(
-                data => this.DATA = data,
-                error => console.log(error),
-                () => this.GetData(callBackFunc)
-            )
-        }else{
-            this.getRequest(url , param).subscribe(
-                data => this.DATA = data,
-                error => console.log(error),
-                () => this.GetData(callBackFunc)
-            )
-        }
-    }
+    // sendRequest(url:string , param:object , method:string , callBackFunc:any){
+    //     if(method.toLocaleLowerCase() == 'post'){
+    //         this.postRequest(url , param).subscribe(
+    //             data => this.DATA = data,
+    //             error => console.log(error),
+    //             () => this.callBackFunc()
+    //         )
+    //     }else if(method.toLocaleLowerCase() == 'get'){
+    //         this.getRequest(url , param).subscribe(
+    //             data => this.DATA = data,
+    //             error => console.log(error),
+    //             () => this.GetData(callBackFunc)
+    //         )
+    //     }
+    // }
 
-  private  GetData(callBackFunc:any){
-        
-        if(this.DATA['act'] == 'msg'){
-            alert(this.DATA['text']);
-        }
-        else if(callBackFunc != null){
-            callBackFunc(this.DATA);
-        }
-    }
+//   private  GetData(callBackFunc:any){        
+//         if(this.DATA['act'] == 'msg'){
+//             alert(this.DATA['text']);
+//         }
+//         else if(callBackFunc != null){            
+//             callBackFunc(this.DATA);
+//         }
+//     }
 }
 

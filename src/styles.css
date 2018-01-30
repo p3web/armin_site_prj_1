@@ -71,13 +71,20 @@ img{
 .pull-left{
     float: left;
 }
+.tableDisplay{
+    display: table;
+}
+.tableCell{
+    display: table-cell;
+    vertical-align: middle;
+}
 /* signUp */
 .signUp{
     height: 87.1vh;
     margin-top: 6.5vh;
 }
 .header{
-    background: rgb(46, 44, 44);
+    background:#150353;
     color: #fff;
     padding: 12px 0; 
     
@@ -90,4 +97,8 @@ img{
 }
 footer a{
     color: inherit;
+}
+.backGroundImage{
+    background-image: url('assets/img/bg1.jpg');
+    background-size: cover;
 }
