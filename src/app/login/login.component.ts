@@ -15,7 +15,7 @@ import {ErrorStateMatcher} from '@angular/material/core';
   providers : [HttpService]
 })
 export class LoginComponent implements OnInit {
-  
+  DATA = {};
   // TODO : set correct url
   loginUrl : string = 'http://w3pa.com/saku/phpCode/controller_robo/controller_user.php';
 
@@ -32,8 +32,12 @@ export class LoginComponent implements OnInit {
    }
    
    onSubmit(Form){
-     Form['act'] = 'login';
-     this._http.sendRequest(this.loginUrl , Form , 'GET' , console.log);
+     Form['act'] = 'login';     
+     this._http.getRequest(this.loginUrl , Form).subscribe(
+      res => this.DATA = res,
+      error => console.log(error),
+      () => console.log(this.DATA)  
+     );
    }
 
   ngOnInit() {

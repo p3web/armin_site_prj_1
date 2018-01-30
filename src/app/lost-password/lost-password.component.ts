@@ -17,6 +17,9 @@ import { HttpService } from '../globalClasses/Http.service';
 export class LostPasswordComponent implements OnInit {
   //  TODO : set correct url
   lostPassUrl : string = 'http://w3pa.com/saku/phpCode/controller_robo/controller_user.php';
+
+  DATA = {};
+  
   // Form model
   lostPass : FormGroup;
   email : AbstractControl;
@@ -27,9 +30,13 @@ export class LostPasswordComponent implements OnInit {
     })
    }
 
-   onSubmit(Form) {    
+     onSubmit(Form) {    
     Form['act'] = 'lost_pass';      
-    this._http.sendRequest(this.lostPassUrl , Form , 'GET' , console.log);
+    this._http.getRequest(this.lostPassUrl , Form).subscribe(
+      res => this.DATA = res,
+      error => console.log(error),
+      () => console.log(this.DATA)
+    );
   }
 
   ngOnInit() {

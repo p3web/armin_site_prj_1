@@ -18,7 +18,7 @@ import { validatorCustom } from '../globalClasses/validatorClass';
 export class SetPasswordComponent implements OnInit {
   //  TODO : set correct url
   setPassUrl : string = 'http://w3pa.com/saku/phpCode/controller_robo/controller_user.php';
- 
+  DATA = {};
   // Form model
   setPass : FormGroup;
   pass : AbstractControl;
@@ -34,8 +34,12 @@ export class SetPasswordComponent implements OnInit {
     })
   }
   onSubmit(Form) {    
-    Form['act'] = 'set_pass';
-    this._http.sendRequest(this.setPassUrl , Form , 'GET' , console.log);
+    Form['act'] = 'set_pass';    
+    this._http.getRequest(this.setPassUrl , Form ).subscribe(
+      res => this.DATA = res,
+      error => console.log(error),
+      () => console.log(this.DATA)  
+    );
   }
   ngOnInit() {
   }

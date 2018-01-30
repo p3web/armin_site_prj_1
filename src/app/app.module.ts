@@ -134,6 +134,7 @@ import {LoginComponent} from './pages/extra-pages/login/login.component';
 import {LostPasswordComponent} from './pages/extra-pages/lost-password/lost-password.component';
 import {SignupComponent} from './pages/extra-pages/signup/signup.component';
 import {SetPasswordComponent} from './pages/extra-pages/set-password/set-password.component';
+import { IntroductionComponent } from './pages/intake/introduction/introduction.component';
 
 
 @NgModule({
@@ -269,7 +270,8 @@ import {SetPasswordComponent} from './pages/extra-pages/set-password/set-passwor
     LoginComponent,
     SignupComponent,
     LostPasswordComponent,
-    SetPasswordComponent
+    SetPasswordComponent,
+    IntroductionComponent
   ],
 
   entryComponents: [ DialogResultComponent, CalendarDialogComponent ],

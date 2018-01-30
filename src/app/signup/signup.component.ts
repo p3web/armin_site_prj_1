@@ -26,8 +26,8 @@ export class SignupComponent implements OnInit {
   email : AbstractControl;
   company_name : AbstractControl;
 
-  // Temp
-  data;
+  
+  DATA={};
 
   constructor (fb : FormBuilder , private _http : HttpService){    
     // custom Validator
@@ -49,7 +49,12 @@ export class SignupComponent implements OnInit {
   onSubmit(Form) {
       
     Form['act'] = 'set_user';      
-    this._http.sendRequest(this.SignUpUrl , Form , 'GET' , console.log);
+    this._http.getRequest(this.SignUpUrl , Form).subscribe(
+      res => this.DATA = res,
+      error => console.log(error),
+      () => console.log(this.DATA)
+      
+    )
   }
 
   ngOnInit() {
