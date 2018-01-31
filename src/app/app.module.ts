@@ -135,7 +135,13 @@ import {LostPasswordComponent} from './pages/extra-pages/lost-password/lost-pass
 import {SignupComponent} from './pages/extra-pages/signup/signup.component';
 import {SetPasswordComponent} from './pages/extra-pages/set-password/set-password.component';
 import { IntroductionComponent } from './pages/intake/introduction/introduction.component';
-import { CompanyDetailsComponent } from './pages/intake/company-details/company-details.component';;
+import { CompanyDetailsComponent } from './pages/intake/company-details/company-details.component';
+
+
+import { HttpService } from './globalClasses/Http.service';
+import { lang } from './globalClasses/lang';
+
+
 
 @NgModule({
   imports: [
@@ -176,14 +182,12 @@ import { CompanyDetailsComponent } from './pages/intake/company-details/company-
     BrowserAnimationsModule,
     AppRoutingModule,
     ChartsModule,    
-    HttpModule,
-
-
+    HttpModule,    
     CalendarModule.forRoot(),
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyAU9f7luK3J31nurL-Io3taRKF7w9BItQE'
     })
-  ],
+  ],  
   declarations : [
     AppComponent,    
     DefaultLayoutComponent,
@@ -274,12 +278,11 @@ import { CompanyDetailsComponent } from './pages/intake/company-details/company-
     SetPasswordComponent,
     IntroductionComponent,
     CompanyDetailsComponent
-  ],
-
+  ],  
   entryComponents: [ DialogResultComponent, CalendarDialogComponent ],
   bootstrap: [ AppComponent ]
 })
 
 export class AppModule {
-
+  
 }
