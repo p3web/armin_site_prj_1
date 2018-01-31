@@ -74,6 +74,14 @@ import {LostPasswordComponent} from './pages/extra-pages/lost-password/lost-pass
 import {SignupComponent} from './pages/extra-pages/signup/signup.component';
 import {SetPasswordComponent} from './pages/extra-pages/set-password/set-password.component';
 
+import {IntroductionComponent} from './pages/intake/introduction/introduction.component'
+import { CompanyDetailsComponent } from './pages/intake/company-details/company-details.component';
+
+const intakeRoutes: Routes = [
+  { path: 'introduction', component: IntroductionComponent },
+  { path: 'company_information', component: CompanyDetailsComponent }
+]
+
 const defaultRoutes: Routes = [
   { path: 'dashboard', component: PageDashboardComponent },
   { path: 'dashboard-2', component: PageDashboard2Component },
@@ -143,6 +151,11 @@ const extraRoutes: Routes = [
 ];
 
 const routes: Routes = [
+  {
+    path : 'intake',
+    component : DefaultLayoutComponent,
+    children : intakeRoutes
+  },
   {
     path: '',
     redirectTo: '/default-layout/dashboard',

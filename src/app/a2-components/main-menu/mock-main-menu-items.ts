@@ -392,3 +392,38 @@ export const MAINMENUITEMS: MainMenuItem[] = [
     budgeColor: ''
   }
 ];
+
+
+export var MenuItem: MainMenuItem[] = [
+  {
+    title: 'Main',
+    icon: '',
+    active: true,
+    groupTitle : true,
+    sub: '',
+    routing: '',
+    externalLink: '',
+    budge: '',
+    budgeColor: ''
+  }, {
+    title: 'Intake',
+    icon: 'fa fa-home',
+    active: false,
+    groupTitle: false,
+    sub: [
+      {
+        title: 'Introduction',
+        routing: '/intake/introduction'
+      }
+    ],
+    routing: '/intake/introduction',
+    externalLink: '',
+    budge: '1',
+    budgeColor: '#f44236'
+  }
+  ];
+
+ export var MenuSubItem = ['','',{
+  title: 'Level2',
+  routing: '/intake/introduction'
+ }];

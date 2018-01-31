@@ -6,12 +6,16 @@ img{
     max-width: 100%
 }
 .text-right{
-    text-align: right
+    text-align: right;
 }
 .ltr{
     direction: ltr;
 }
 .rtl{
+    direction: rtl;
+}
+.rttr{
+    text-align: right !important;
     direction: rtl;
 }
 .no-padding{
@@ -84,7 +88,7 @@ img{
     margin-top: 6.5vh;
 }
 .header{
-    background:#150353;
+    background:#3c4e62;
     color: #fff;
     padding: 12px 0; 
     

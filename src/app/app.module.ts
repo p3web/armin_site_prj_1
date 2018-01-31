@@ -135,10 +135,11 @@ import {LostPasswordComponent} from './pages/extra-pages/lost-password/lost-pass
 import {SignupComponent} from './pages/extra-pages/signup/signup.component';
 import {SetPasswordComponent} from './pages/extra-pages/set-password/set-password.component';
 import { IntroductionComponent } from './pages/intake/introduction/introduction.component';
-
+import { CompanyDetailsComponent } from './pages/intake/company-details/company-details.component';;
 
 @NgModule({
   imports: [
+    MatSelectModule,
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
@@ -174,7 +175,7 @@ import { IntroductionComponent } from './pages/intake/introduction/introduction.
     MatTooltipModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    ChartsModule,
+    ChartsModule,    
     HttpModule,
 
 
@@ -271,7 +272,8 @@ import { IntroductionComponent } from './pages/intake/introduction/introduction.
     SignupComponent,
     LostPasswordComponent,
     SetPasswordComponent,
-    IntroductionComponent
+    IntroductionComponent,
+    CompanyDetailsComponent
   ],
 
   entryComponents: [ DialogResultComponent, CalendarDialogComponent ],

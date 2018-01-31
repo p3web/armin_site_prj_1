@@ -176,10 +176,10 @@
     <div class="nav-item" [ngClass]="{ 'opened' : false }">
       <button mat-button (click)="open($event)">
         <div class="avatar tableDisplay">
-          <h6 class="tableCell" *ngIf="DATA[0].avatar == ''" >{{ nameLetter }}</h6>
-          <img *ngIf="DATA[0].avatar != ''"  src="{{ DATA[0].avatar }}" width="40" height="40" alt="">
+          <h6 class="tableCell" *ngIf="DATA[0] != undefined && DATA[0].avatar == ''" >{{ nameLetter }}</h6>
+          <img *ngIf="DATA[0] != undefined && DATA[0].avatar != ''"  src="{{ DATA[0].avatar }}" width="40" height="40" alt="">
         </div>
-        <div class="name">{{DATA[0].first_name + ' ' +  DATA[0].last_name}}</div>
+        <div *ngIf="DATA[0] != undefined"  class="name">{{DATA[0].first_name + ' ' +  DATA[0].last_name}}</div>
       </button>
 
       <div class="dropdown-menu mini-menu">

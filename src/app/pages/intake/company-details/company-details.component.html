@@ -1,0 +1,209 @@
+<div class="col-12 margin-top">
+  <!-- card -->
+  <mat-card class="rtl">
+    <!-- header -->
+    <h4 class="text-center header card-center-top margin-bottom">Company information</h4>
+    <!-- text -->
+    <div class="col-12  padding rttr">
+     <p class="f-15 rttr">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis </p>
+   </div>  
+
+   <h5 class="inputGroup">Company information</h5>
+
+   <div>
+      <mat-form-field class=" text-right">
+          <input matInput  placeholder="Company name*" id="c_name" name="c_name" >         
+      </mat-form-field>
+
+      <mat-form-field>
+          <mat-select placeholder="Company branch *" name="c_branch" id="c_branch">
+            <mat-option *ngFor="let CB of CompanyBranch" [value]="CB.value" >
+              {{ CB.viewValue }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <h5 class="inputGroup">Address information</h5>
+
+      <div>
+         <mat-form-field class=" text-right">
+             <input matInput  placeholder="Address" id="address" name="address" >               
+         </mat-form-field>
+
+         <mat-form-field class=" text-right">
+            <input matInput  placeholder="Zip code" id="zip_code" name="zip_code" >                   
+        </mat-form-field>
+
+        <mat-form-field class=" text-right">
+            <input matInput  placeholder="City*" id="city" name="city" >            
+        </mat-form-field>
+
+
+        <mat-form-field class=" text-right">
+            <input matInput  placeholder="Country*" id="country" name="country" >                        
+        </mat-form-field>
+
+      </div>
+
+      <h5 class="inputGroup">Contact information</h5>
+
+      <div >   
+        <mat-form-field class=" text-right">
+          <input matInput placeholder="Email*" [errorStateMatcher]="matcher" id="email" name="email" >          
+         </mat-form-field>
+
+         <mat-form-field class=" text-right">
+            <input matInput  placeholder="Phone*" id="phone" name="phone" >                        
+        </mat-form-field>
+
+        
+        <mat-form-field class=" text-right">
+            <input matInput  placeholder="Website" id="website" name="website" >                
+        </mat-form-field>
+
+      </div>
+      <div class="row">
+          <div class="col-6">
+             <span class="f-15"> when did you start the company ?</span>
+              <i matTooltip="Tooltip!" class="fa fa-question-circle"></i>
+          </div>
+          <div class="col-6">
+              <mat-form-field class="full-width">
+                  <input matInput [matDatepicker]="picker" placeholder="Date*" id="date" name="date">
+                  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                  <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+            </div>
+      </div>
+
+      <div class="row">
+          <div class="col-6">
+             <span class="f-15"> how many owner does company have ?</span>
+              <i matTooltip="Tooltip!" class="fa fa-question-circle" ></i>
+          </div>
+          <div class="col-6">
+              <mat-form-field class="full-width text-right">
+                  <input matInput type="number"  placeholder="Amount of owner*" id="ao_owner" name="ao_owner" >                  
+              </mat-form-field>
+      
+            </div>
+      </div>
+
+
+      <div class="row">
+          <div class="col-6">
+             <span class="f-15"> how many owner does company have ?</span>
+              <i matTooltip="Tooltip!" class="fa fa-question-circle" ></i>
+          </div>
+          <div class="col-6">
+              <mat-form-field class="full-width text-right">
+                  <input matInput type="number"  placeholder="Amount of employees*" id="ao_owner" name="ao_owner" >                  
+              </mat-form-field>
+      
+            </div>
+      </div>
+
+      <div class="row">
+          <div class="col-6">
+             <span class="f-15"> how many owner does company have ?</span>
+              <i matTooltip="Tooltip!" class="fa fa-question-circle" ></i>
+          </div>
+          <div class="col-6">
+              <mat-form-field>  
+                <mat-select placeholder="Currently active in an incubator *" name="active" id="active" >
+                    <mat-option  value="yes" >
+                      yes
+                    </mat-option>
+                    <mat-option  value="no" >
+                        no
+                      </mat-option>
+                  </mat-select>
+              </mat-form-field>
+
+              <mat-form-field class="text-right">
+                  <input matInput  placeholder="Name of incubator program*" id="name_prog" name="name_prog">                           
+              </mat-form-field>
+      
+            </div>
+      </div>
+
+     
+  </mat-card>
+  
+</div>
+
+<div class="col-12 margin-top">
+    <!-- card -->
+    <mat-card class="rtl">
+      <!-- header -->
+      <h4 class="text-center header card-center-top margin-bottom">Company idea</h4>
+      <!-- text -->
+      <div class="col-12  padding rttr">
+       <p class="f-15">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis </p>
+     </div>  
+
+    <div>
+      <mat-form-field class="full-width text-right">
+          <input matInput class="full-width"  placeholder="why was the company started*" id="company_reson" name="company_reson" >              
+      </mat-form-field>
+    </div>
+
+    <div>
+        <mat-form-field class="full-width text-right">
+            <input matInput class="full-width" placeholder="Describe your your product/service *" id="prod_desc" name="prod_desc" >            
+        </mat-form-field>
+    </div>
+
+  </mat-card> 
+</div>  
+
+
+<div class="col-12 margin-top">
+    <!-- card -->
+    <mat-card class="rtl">
+      <!-- header -->
+      <h4 class="text-center header card-center-top margin-bottom">Current earning and costs</h4>
+      <!-- text -->
+      <div class="col-12  padding rttr">
+        <p class="f-15">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis </p>
+      </div>  
+
+      <div class="row">
+      <div class="col-6">
+          <span class="f-15">current monthly earning ?</span>
+          <i matTooltip="Tooltip!" class="fa fa-question-circle" ></i>
+      </div>
+      <div class="col-6">
+          <mat-form-field class="full-width text-right">
+              <input matInput class="full-width"  placeholder="Amount *" id="mo_amount_earning" name="mo_amount_earning" >                    
+          </mat-form-field>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-6">
+          <span class="f-15"> current monthly costs ?</span>
+          <i matTooltip="Tooltip!" class="fa fa-question-circle" ></i>
+      </div>
+      <div class="col-6">
+          <mat-form-field class="full-width text-right">
+              <input matInput class="full-width"  placeholder="Amount *" id="mo_amount_costs" name="mo_amount_costs" >                    
+          </mat-form-field>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-6">
+          <span class="f-15">what kind of investment have you received so far ?</span>
+          <i matTooltip="Tooltip!" class="fa fa-question-circle" ></i>
+      </div>
+      <div class="col-6">
+          <mat-form-field class="full-width text-right">
+              <input matInput class="full-width"  placeholder="Amount *" id="mo_amount_costs" name="mo_amount_costs" >                    
+          </mat-form-field>
+      </div>
+    </div>
+
+     </mat-card>
+</div>

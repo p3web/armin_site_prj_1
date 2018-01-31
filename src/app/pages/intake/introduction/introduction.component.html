@@ -10,9 +10,9 @@
           </div>  
 
           <!-- Video -->
-          <div class="col-8">
-            <video controls >
-              <source src="{{DATA[0].src}}" type="video/mp4">
+          <div class="col-8 offset-2 margin-top">
+            <video controls class="full-width">
+              <source *ngIf="DATA[0] != undefined"  src="{{DATA[0].src}}"  type="video/mp4">
             </video>
           </div>
           

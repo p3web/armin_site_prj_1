@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { MainMenuItem } from './main-menu-item';
 import { MainMenuService } from './main-menu.service';
 
+import {  MenuItem, MenuSubItem } from './mock-main-menu-items';
+
 @Component({
   moduleId: module.id,
   selector: 'main-menu',
@@ -15,9 +17,15 @@ export class MainMenuComponent {
 
   constructor(private mainMenuService: MainMenuService) { }
 
-  getMainMenuItems(): void {
+  getMainMenuItems(level? : number): void {      
+
+    if(level != null)
+      MenuItem[1]['sub'].push(MenuSubItem[level]);
+
     this.mainMenuService.getMainMenuItems().then(mainMenuItems => this.mainMenuItems = mainMenuItems);
   }
+
+  
 
   ngOnInit(): void {
     this.getMainMenuItems();
