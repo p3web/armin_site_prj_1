@@ -279,6 +279,7 @@ import { lang } from './globalClasses/lang';
     IntroductionComponent,
     CompanyDetailsComponent
   ],  
+  providers : [HttpService , lang],
   entryComponents: [ DialogResultComponent, CalendarDialogComponent ],
   bootstrap: [ AppComponent ]
 })

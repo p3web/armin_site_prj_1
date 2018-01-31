@@ -9,12 +9,16 @@ import {ErrorStateMatcher} from '@angular/material/core';
 
 import { HttpService } from '../../../globalClasses/Http.service';
 
+import {lang} from '../../../globalClasses/lang';
+
 @Component({
   selector: 'app-lost-password',
   templateUrl: './lost-password.component.html',
   providers:[HttpService]
 })
 export class LostPasswordComponent implements OnInit {
+  email_l : string;
+  signup_l : string;
   //  TODO : set correct url
   lostPassUrl : string = 'http://w3pa.com/saku/phpCode/controller_robo/controller_user.php';
 
@@ -23,7 +27,7 @@ export class LostPasswordComponent implements OnInit {
   lostPass : FormGroup;
   email : AbstractControl;
 
-  constructor(fb:FormBuilder , private _http: HttpService) {
+  constructor(fb:FormBuilder , private _http: HttpService ,  private _lang : lang) {
     this.lostPass = fb.group({
       'email' : ['' , [Validators.email,Validators.required]]
     })
@@ -39,6 +43,8 @@ export class LostPasswordComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.email_l = this._lang.getLang('intake','business_partners.section.add_partner.field.email');    
+    this.signup_l= this._lang.getLang('intake','signup.page.title');
   }
 
 }

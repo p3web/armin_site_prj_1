@@ -1,3 +1,7 @@
+import { Injectable } from "@angular/core";
+
+
+@Injectable()
 export class lang{
 
    private lang = [{
@@ -479,8 +483,8 @@ export class lang{
     }];
 
 
-    getLang(key : string){
-        return this.lang[key];
+    getLang(key : string , subey:string){
+        return this.lang[0][key][subey];
     }
 
 }

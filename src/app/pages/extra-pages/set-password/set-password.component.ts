@@ -9,6 +9,7 @@ import {ErrorStateMatcher} from '@angular/material/core';
 
 import { HttpService } from '../../../globalClasses/Http.service';
 import { validatorCustom } from '../../../globalClasses/validatorClass';
+import {lang} from '../../../globalClasses/lang';
 
 @Component({
   selector: 'app-set-password',
@@ -21,12 +22,16 @@ export class SetPasswordComponent implements OnInit {
   
   DATA = {};
   
+  pass_l:string;
+  confpass_l : string;
+  title_l : string;
+
   // Form model
   setPass : FormGroup;
   pass : AbstractControl;
   confirmPass : AbstractControl;
 
-  constructor(fb:FormBuilder , private _http: HttpService) { 
+  constructor(fb:FormBuilder , private _http: HttpService , private _lang : lang) { 
      // custom Validator
     // let CV : validatorCustom = new validatorCustom();
 
@@ -44,6 +49,9 @@ export class SetPasswordComponent implements OnInit {
     );
   }
   ngOnInit() {
+    this.pass_l = this._lang.getLang('intake','set_password.section.set_password.field.password');    
+    this.confpass_l = this._lang.getLang('intake','set_password.section.set_password.field.confirm_password');    
+    this.title_l = this._lang.getLang('intake','set_password.page.title');        
   }
 
 }
